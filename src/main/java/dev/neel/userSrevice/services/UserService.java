@@ -28,12 +28,7 @@ public class UserService {
             return null;
         }
 
-        UserDto userDto = new UserDto();
-        userDto.setEmail(userOptional.get().getEmail());
-        userDto.setRoles(userOptional.get().getRoles());
-
-
-        return userDto;
+        return UserDto.from(userOptional.get());
     }
 
     public UserDto setUserRoles(Long userId, List<Long> roleIds) {
@@ -49,10 +44,6 @@ public class UserService {
 
         User savedUser = userRepository.save(user);
 
-        UserDto userDto = new UserDto();
-        userDto.setEmail(savedUser.getEmail());
-        userDto.setRoles(savedUser.getRoles());
-
-        return userDto;
+        return UserDto.from(savedUser);
     }
 }

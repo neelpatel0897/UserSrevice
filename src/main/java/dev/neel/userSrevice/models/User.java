@@ -20,10 +20,7 @@ public class User extends BaseModel {
     private Set<Role> roles=new HashSet<Role>();
 
     
-    public User(String email, String password) {
-        this.email = email;
-        this.password = password;
-    }
+    
     
 
 }

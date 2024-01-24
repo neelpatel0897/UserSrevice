@@ -31,7 +31,7 @@ public class AuthController {
     }
 
     @PostMapping("/login")     
-    public ResponseEntity<UserDto> login(@RequestBody LoginRequestDto loginRequestDto){
+    public ResponseEntity<UserDto> login(@RequestBody LoginRequestDto loginRequestDto) throws Exception{
         return authService.login(loginRequestDto.getEmail(), loginRequestDto.getPassword());
           
         
